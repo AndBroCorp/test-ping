@@ -49,9 +49,9 @@ jobs:
 
       - name: Sync files
         run: |
+          rm -rf .tmp/src
           cp -r src .tmp/.
           cd .tmp/
-          rm -rf src
           git status
           git add *
           git commit -m "Sync from ping repo"
