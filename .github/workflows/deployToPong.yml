@@ -12,6 +12,7 @@ jobs:
 
       - name: '[DEBUG] Repo Status'
         run: |
+          ls -la ../
           pwd
           ls
           cat README.md
