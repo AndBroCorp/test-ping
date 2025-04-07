@@ -1,3 +1,4 @@
+name: Deploy to second repo
 on:
   workflow_dispatch:
 
