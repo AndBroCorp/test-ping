@@ -12,7 +12,7 @@ jobs:
 
       - name: '[DEBUG] Repo Status'
         run: |
-          ls -la /home/runner/work/ ls -I _*
+          ls -la /home/runner/work/ -I _*
           echo "-----------------"
           pwd
           ls -la
@@ -34,7 +34,7 @@ jobs:
 
       - name: '[DEBUG] Repo Status (pong-repo)'
         run: |
-          ls -la /home/runner/work/ ls -I _*
+          ls -la /home/runner/work/ -I _*
           echo "-----------------"
           pwd
           ls -la 
