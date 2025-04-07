@@ -49,9 +49,7 @@ jobs:
 
       - name: Sync files
         run: |
-          pwd
-          echo "-----------------"
-          cp -r src/* .tmp/.
+          cp -r src .tmp/.
           cd .tmp/
           git add *
           git commit -m "Sync from ping repo"
