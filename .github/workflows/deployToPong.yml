@@ -12,9 +12,11 @@ jobs:
 
       - name: '[DEBUG] Repo Status'
         run: |
-          ls -la ../
+          ls -laR /home/runner/work/
+          echo "-----------------"
           pwd
           ls -la
+          echo "-----------------"
           cat README.md
 
       - name: Prep Payload
@@ -28,13 +30,15 @@ jobs:
           repository: AndBroCorp/test-pong
           ref: 'main'
           ssh-key: ${{ secrets.PONG_DEPLOY_TOKEN }}
-          path: '.tmp'
+          path: '/.tmp'
 
       - name: '[DEBUG] Repo Status (pong-repo)'
         run: |
-          ls -la ../
+          ls -laR /home/runner/work/
+          echo "-----------------"
           pwd
           ls -la 
+          echo "-----------------"
           cat README.md
 
       - name: Setup Config
