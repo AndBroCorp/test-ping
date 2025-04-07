@@ -19,6 +19,8 @@ jobs:
           echo "-----------------"
           cat README.md
 
+      - name: Prepear for checkout pong-repo
+        run: mkdir -p .tmp
 
       - name: Checkout pong-repo
         uses: actions/checkout@v4
