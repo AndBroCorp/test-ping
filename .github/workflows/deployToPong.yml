@@ -14,7 +14,7 @@ jobs:
         run: |
           ls -la ../
           pwd
-          ls
+          ls -la
           cat README.md
 
       - name: Prep Payload
@@ -27,6 +27,7 @@ jobs:
           repository: AndBroCorp/test-pong
           ref: 'main'
           ssh-key: ${{ secrets.PONG_DEPLOY_TOKEN }}
+          path: '..'
 
       - name: '[DEBUG] Repo Status (pong-repo)'
         run: |
