@@ -10,11 +10,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Repo Status
+      - name: '[DEBUG] Repo Status'
         run: |
           pwd
           ls
           cat README.md
+
+      - name: Prep Payload
+        run: |
+          zip -r /home/runner/work/payload.zip src
 
       - name: Checkout pong-repo
         uses: actions/checkout@v4
@@ -23,11 +27,11 @@ jobs:
           ref: 'main'
           ssh-key: ${{ secrets.PONG_DEPLOY_TOKEN }}
 
-      - name: Repo Status
+      - name: '[DEBUG] Repo Status (pong-repo)'
         run: |
-          ls ../
+          ls -la ../
           pwd
-          ls
+          ls -la 
           cat README.md
 
       - name: Setup Config
