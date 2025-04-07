@@ -19,7 +19,7 @@ jobs:
           echo "-----------------"
           cat README.md
 
-      - name: Prepear for checkout pong-repo
+      - name: Prep for checkout pong-repo
         run: mkdir -p .tmp
 
       - name: Checkout pong-repo
@@ -43,13 +43,13 @@ jobs:
 
       - name: Setup Config
         run: |
-          cd .tmp/pong-repo/
+          cd .tmp/
           git config user.name "GitHub Actions Bot"
           git config user.email "andreas.brostrom+test-ping-pong@playipp.com"
 
       - name: Sync files
         run: |
-          cp -r src/* .tmp/pong-repo/.
+          cp -r src/* .tmp/.
           cd .tmp/pong-repo
           git add *
           git commit -m "Sync from ping repo"
