@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: setup git config
+      - name: Repo Status
         run: |
           pwd
           ls
@@ -23,10 +23,21 @@ jobs:
           ref: 'main'
           ssh-key: ${{ secrets.PONG_DEPLOY_TOKEN }}
 
-      - name: setup git config
+      - name: Repo Status
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "andreas.brostrom+test-ping-pong@playipp.com"
           pwd
           ls
           cat README.md
+
+      - name: Setup Config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "andreas.brostrom+test-ping-pong@playipp.com"
+
+      - name: Sync files
+        run: |
+          cp src/* pong-repo/.
+          cd pong-repo
+          git add *
+          git commit -m "Sync from ping repo"
+          git push origin main
