@@ -25,6 +25,7 @@ jobs:
 
       - name: Repo Status
         run: |
+          ls ../
           pwd
           ls
           cat README.md
