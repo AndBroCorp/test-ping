@@ -27,7 +27,7 @@ jobs:
           repository: AndBroCorp/test-pong
           ref: 'main'
           ssh-key: ${{ secrets.PONG_DEPLOY_TOKEN }}
-          path: '..'
+          path: '.tmp'
 
       - name: '[DEBUG] Repo Status (pong-repo)'
         run: |
