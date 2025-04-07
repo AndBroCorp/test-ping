@@ -19,6 +19,7 @@ jobs:
 
       - name: Prep Payload
         run: |
+          mkdir -p .tmp
           zip -r /home/runner/work/payload.zip src
 
       - name: Checkout pong-repo
