@@ -22,7 +22,7 @@ jobs:
       - name: Prep Payload
         run: |
           mkdir -p .tmp
-          zip -r /home/runner/work/payload.zip src
+          zip -r /home/runner/work/test-ping/payload.zip src
 
       - name: Checkout pong-repo
         uses: actions/checkout@v4
@@ -39,7 +39,7 @@ jobs:
           pwd
           ls -la 
           echo "-----------------"
-          ls -la /home/runner/work/test-ping/.tmp/
+          ls -la /home/runner/work/test-ping/test-ping/.tmp/
           echo "-----------------"
           cat README.md
 
