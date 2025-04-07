@@ -36,7 +36,7 @@ jobs:
 
       - name: Sync files
         run: |
-          cp src/* pong-repo/.
+          cp ../src/* pong-repo/.
           cd pong-repo
           git add *
           git commit -m "Sync from ping repo"
