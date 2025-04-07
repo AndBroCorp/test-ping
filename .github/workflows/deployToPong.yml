@@ -61,6 +61,6 @@ jobs:
         run: |
           curl -X POST \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.PONG_DEPLOY_TOKEN }}" \
+            -H "Authorization: Bearer ${{ secrets.PING_TO_PING_WORKFLOW_PAT_TOKEN }}" \
             https://api.github.com/repos/AndBroCorp/test-pong/actions/workflows/HelloWorld.yml/dispatches \
             -d '{"ref":"main"}'
