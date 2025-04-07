@@ -19,10 +19,6 @@ jobs:
           echo "-----------------"
           cat README.md
 
-      - name: Prep Payload
-        run: |
-          mkdir -p .tmp
-          zip -r /home/runner/work/test-ping/payload.zip src
 
       - name: Checkout pong-repo
         uses: actions/checkout@v4
@@ -45,13 +41,14 @@ jobs:
 
       - name: Setup Config
         run: |
+          cd .tmp/pong-repo/
           git config user.name "GitHub Actions Bot"
           git config user.email "andreas.brostrom+test-ping-pong@playipp.com"
 
       - name: Sync files
         run: |
-          cp -r /home/runner/work/test-ping/src/* pong-repo/.
-          cd pong-repo
+          cp -r src/* .tmp/pong-repo/.
+          cd .tmp/pong-repo
           git add *
           git commit -m "Sync from ping repo"
           git push origin main
