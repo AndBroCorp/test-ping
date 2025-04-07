@@ -1,10 +1,11 @@
 name: Deploy to second repo
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
     name: Git push on separate repo
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout
