@@ -51,6 +51,8 @@ jobs:
         run: |
           cp -r src .tmp/.
           cd .tmp/
+          rm -rf src
+          git status
           git add *
           git commit -m "Sync from ping repo"
           git push origin main
