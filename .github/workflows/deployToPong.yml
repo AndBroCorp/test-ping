@@ -51,8 +51,8 @@ jobs:
         run: |
           pwd
           echo "-----------------"
-          cp -r /home/runner/work/test-ping/test-ping/src/* /home/runner/work/test-ping/test-ping/.tmp/.
-          cd .tmp/pong-repo
+          cp -r src/* .tmp/.
+          cd .tmp/
           git add *
           git commit -m "Sync from ping repo"
           git push origin main
